@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://csm0yv65r5ryx"]
+
+[ext_resource type="Script" path="res://SCR/caderno.gd" id="1_8d2b1"]
+[ext_resource type="Script" path="res://SCR/letras_container.gd" id="2_w0c6l"]
+[ext_resource type="PackedScene" uid="uid://cdl5exccvhnat" path="res://TSCN/letra.tscn" id="3_2rwfy"]
+
+[node name="TESTE" type="Node2D"]
+
+[node name="CADERNO" type="Node2D" parent="."]
+script = ExtResource("1_8d2b1")
+range = null
+
+[node name="silaba" type="Label" parent="CADERNO"]
+clip_contents = true
+custom_minimum_size = Vector2(800, 200)
+offset_left = 244.0
+offset_right = 1044.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PALAVRA" type="Label" parent="CADERNO"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+offset_left = 703.0
+offset_right = 1280.0
+offset_bottom = 305.0
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LetrasContainer" type="HBoxContainer" parent="CADERNO"]
+custom_minimum_size = Vector2(1280, 500)
+offset_top = 220.0
+offset_right = 1280.0
+offset_bottom = 720.0
+alignment = 1
+script = ExtResource("2_w0c6l")
+
+[node name="LETRA" parent="CADERNO/LetrasContainer" instance=ExtResource("3_2rwfy")]
+layout_mode = 2
+letra = "dd"
+
+[node name="LETRA2" parent="CADERNO/LetrasContainer" instance=ExtResource("3_2rwfy")]
+layout_mode = 2
+letra = "hh"
+
+[node name="LETRA3" parent="CADERNO/LetrasContainer" instance=ExtResource("3_2rwfy")]
+layout_mode = 2
+letra = "gg"
+
+[connection signal="letra_selecionada" from="CADERNO/LetrasContainer/LETRA" to="CADERNO" method="_on_letra_selecionada"]
+[connection signal="letra_selecionada" from="CADERNO/LetrasContainer/LETRA2" to="CADERNO" method="_on_letra_selecionada"]
+[connection signal="letra_selecionada" from="CADERNO/LetrasContainer/LETRA3" to="CADERNO" method="_on_letra_selecionada"]

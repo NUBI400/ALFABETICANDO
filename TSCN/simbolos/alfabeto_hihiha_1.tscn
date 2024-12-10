@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhw5yisujyuqb"]
+
+[ext_resource type="Texture2D" uid="uid://cfv2u33cl4qys" path="res://ASSETS/alfapeto artes/ALFABETO/ALFABETO HIHIHA1.png" id="1_kyyik"]
+
+[node name="AlfabetoHihiha1" type="TextureRect"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("1_kyyik")

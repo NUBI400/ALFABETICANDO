@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdl5exccvhnat"]
+
+[ext_resource type="Script" path="res://SCR/letra.gd" id="1_13858"]
+[ext_resource type="Texture2D" uid="uid://1ep6xho4iq1s" path="res://ASSETS/trabalho 3/hud letra.png" id="2_hpo88"]
+[ext_resource type="FontFile" uid="uid://4nym1lrflvcr" path="res://ASSETS/gome-pixel-font/GomePixel-ARJd7.otf" id="2_i4j1m"]
+[ext_resource type="Texture2D" uid="uid://62ukardp46as" path="res://ASSETS/trabalho 3/hud letra2.png" id="3_ht2to"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akdwm"]
+texture = ExtResource("2_hpo88")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3hin0"]
+texture = ExtResource("3_ht2to")
+
+[node name="LETRA" type="Control"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 200.0
+script = ExtResource("1_13858")
+
+[node name="TextureButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_i4j1m")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxTexture_akdwm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3hin0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_akdwm")
+text = "a"
+icon = ExtResource("2_hpo88")
+flat = true
+icon_alignment = 1
+expand_icon = true

@@ -1,0 +1,1022 @@
+[gd_scene load_steps=40 format=3 uid="uid://csm0yv65r5ryx"]
+
+[ext_resource type="Script" path="res://TSCN/inicio.gd" id="1_6umlm"]
+[ext_resource type="Script" path="res://SCR/caderno.gd" id="1_8d2b1"]
+[ext_resource type="Texture2D" uid="uid://nj15w5oifdf0" path="res://ASSETS/trabalho 3/spritesheet.png" id="2_c6yft"]
+[ext_resource type="Texture2D" uid="uid://75gtt3e8bxss" path="res://icon.svg" id="2_hnfg6"]
+[ext_resource type="Script" path="res://SCR/letras_container.gd" id="2_w0c6l"]
+[ext_resource type="Texture2D" uid="uid://ciqjrfwmx02sq" path="res://ASSETS/trabalho 3/hud.png" id="3_2bqtw"]
+[ext_resource type="FontFile" uid="uid://eu7hivlfsrcs" path="res://ASSETS/gome-pixel-font/GomePixel-DYJX1.otf" id="4_hsp6w"]
+[ext_resource type="FontFile" uid="uid://4nym1lrflvcr" path="res://ASSETS/gome-pixel-font/GomePixel-ARJd7.otf" id="5_qkmn6"]
+[ext_resource type="PackedScene" uid="uid://dhw5yisujyuqb" path="res://TSCN/simbolos/alfabeto_hihiha_1.tscn" id="7_vqxas"]
+[ext_resource type="PackedScene" uid="uid://ccyj6tineal0s" path="res://TSCN/simbolos/alfabeto_hihiha_2.tscn" id="9_7bgvl"]
+[ext_resource type="PackedScene" uid="uid://de8qhoqfria7d" path="res://TSCN/simbolos/alfabeto_hihiha_3.tscn" id="10_4cxcq"]
+[ext_resource type="PackedScene" uid="uid://bp7t41dpamrqr" path="res://TSCN/simbolos/alfabeto_hihiha_4.tscn" id="11_177hx"]
+[ext_resource type="PackedScene" uid="uid://d02wyqoxv6e38" path="res://TSCN/simbolos/alfabeto_hihiha_5.tscn" id="12_jn7yw"]
+[ext_resource type="PackedScene" uid="uid://b764lek8mpl44" path="res://TSCN/simbolos/alfabeto_hihiha_6.tscn" id="13_dspls"]
+[ext_resource type="PackedScene" uid="uid://dpowg1pms7itx" path="res://TSCN/simbolos/alfabeto_hihiha_7.tscn" id="14_oe417"]
+[ext_resource type="PackedScene" uid="uid://ddwap3phrtatc" path="res://TSCN/simbolos/alfabeto_hihiha_8.tscn" id="15_s8ttc"]
+[ext_resource type="PackedScene" uid="uid://dgijblsqwcn8x" path="res://TSCN/simbolos/alfabeto_hihiha_9.tscn" id="16_xnanu"]
+[ext_resource type="PackedScene" uid="uid://cfd08a83boeff" path="res://TSCN/simbolos/alfabeto_hihiha_10.tscn" id="17_v2bwu"]
+[ext_resource type="PackedScene" uid="uid://cnea4yk2af2gr" path="res://TSCN/simbolos/alfabeto_hihiha_11.tscn" id="18_ugh7p"]
+[ext_resource type="PackedScene" uid="uid://c1lm1vjpsbop5" path="res://TSCN/simbolos/alfabeto_hihiha_12.tscn" id="19_q5xk0"]
+[ext_resource type="PackedScene" uid="uid://chpb0q4b2yffj" path="res://TSCN/simbolos/alfabeto_hihiha_13.tscn" id="20_qvuoc"]
+[ext_resource type="PackedScene" uid="uid://dsbgk3n3ys44k" path="res://TSCN/simbolos/alfabeto_hihiha_14.tscn" id="21_jje3q"]
+[ext_resource type="PackedScene" uid="uid://bhq0fhb7013gy" path="res://TSCN/simbolos/alfabeto_hihiha_15.tscn" id="22_gr5og"]
+[ext_resource type="PackedScene" uid="uid://4gt2uroadnf7" path="res://TSCN/simbolos/alfabeto_hihiha_16.tscn" id="23_f41ai"]
+[ext_resource type="Texture2D" uid="uid://c5duo0p7d663s" path="res://TSCN/simbolos/alfabeticandoaaaaa.png" id="25_g4vlu"]
+
+[sub_resource type="Animation" id="Animation_bvs1k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CADERNO:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hux0j"]
+resource_name = "fade_off"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CADERNO:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5w43g"]
+resource_name = "fade_on"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CADERNO:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3h6k5"]
+_data = {
+"RESET": SubResource("Animation_bvs1k"),
+"fade_off": SubResource("Animation_hux0j"),
+"fade_on": SubResource("Animation_5w43g")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frbim"]
+atlas = ExtResource("2_c6yft")
+region = Rect2(0, 0, 2300, 1850)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtvdf"]
+atlas = ExtResource("2_c6yft")
+region = Rect2(2300, 0, 2300, 1850)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8x7d"]
+atlas = ExtResource("2_c6yft")
+region = Rect2(4600, 0, 2300, 1850)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ueaey"]
+atlas = ExtResource("2_c6yft")
+region = Rect2(0, 1850, 2300, 1850)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7c3f"]
+atlas = ExtResource("2_c6yft")
+region = Rect2(2300, 1850, 2300, 1850)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnlmr"]
+atlas = ExtResource("2_c6yft")
+region = Rect2(4600, 1850, 2300, 1850)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6taq"]
+atlas = ExtResource("2_c6yft")
+region = Rect2(0, 3700, 2300, 1850)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_266mt"]
+atlas = ExtResource("2_c6yft")
+region = Rect2(2300, 3700, 2300, 1850)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qeblb"]
+atlas = ExtResource("2_c6yft")
+region = Rect2(4600, 3700, 2300, 1850)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l4l3k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frbim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtvdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8x7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ueaey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7c3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnlmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6taq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_266mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qeblb")
+}],
+"loop": false,
+"name": &"abrindo",
+"speed": 12.0
+}]
+
+[node name="Inicio" type="Node2D"]
+script = ExtResource("1_6umlm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3h6k5")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1149, 875)
+sprite_frames = SubResource("SpriteFrames_l4l3k")
+animation = &"abrindo"
+frame = 8
+frame_progress = 1.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(17.9141, 14.0391)
+texture_normal = ExtResource("2_hnfg6")
+action = "click"
+
+[node name="Alfabeticandoaaaaa" type="Sprite2D" parent="."]
+position = Vector2(860, 180)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("25_g4vlu")
+
+[node name="IMPEDIR CLICK" type="ColorRect" parent="."]
+offset_right = 2303.0
+offset_bottom = 1794.0
+color = Color(1, 1, 1, 0)
+
+[node name="timer_label" type="Label" parent="."]
+z_index = 1
+offset_left = 1790.0
+offset_top = 23.0
+offset_right = 2229.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="timer_background" type="Sprite2D" parent="timer_label"]
+z_as_relative = false
+position = Vector2(219.102, 94.5547)
+scale = Vector2(2.4898, 7.27344)
+texture = ExtResource("3_2bqtw")
+
+[node name="Timer" type="Timer" parent="timer_label"]
+
+[node name="CADERNO" type="Node2D" parent="."]
+script = ExtResource("1_8d2b1")
+
+[node name="fundo_grande" type="Sprite2D" parent="CADERNO"]
+position = Vector2(1209, 524)
+scale = Vector2(4, 4)
+texture = ExtResource("3_2bqtw")
+
+[node name="silaba" type="Label" parent="CADERNO"]
+clip_contents = true
+offset_left = 824.0
+offset_top = 430.0
+offset_right = 1594.0
+offset_bottom = 597.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PALAVRA_SIMBOLOS" type="HBoxContainer" parent="CADERNO"]
+z_index = 99
+z_as_relative = false
+offset_left = 839.0
+offset_top = 473.0
+offset_right = 1580.0
+offset_bottom = 577.0
+alignment = 1
+
+[node name="fundo_pequeno" type="Sprite2D" parent="CADERNO"]
+position = Vector2(1362, 668)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("3_2bqtw")
+
+[node name="PALAVRA" type="Label" parent="CADERNO"]
+clip_contents = true
+offset_left = 1134.0
+offset_top = 604.0
+offset_right = 1596.0
+offset_bottom = 714.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_qkmn6")
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dicionario" type="ColorRect" parent="CADERNO"]
+visible = false
+offset_left = 42.0
+offset_top = 448.0
+offset_right = 700.0
+offset_bottom = 1884.0
+color = Color(0, 0, 0, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CADERNO/Dicionario"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer2/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "a ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha1" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer2/HBoxContainer" instance=ExtResource("7_vqxas")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer2/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "b ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha1" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer2/HBoxContainer2" instance=ExtResource("9_7bgvl")]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer3/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "c ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha1" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer3/HBoxContainer" instance=ExtResource("10_4cxcq")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer3"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer3/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "d ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha1" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer3/HBoxContainer2" instance=ExtResource("11_177hx")]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer4/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "e ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha1" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer4/HBoxContainer" instance=ExtResource("12_jn7yw")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer4"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer4/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "f ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha1" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer4/HBoxContainer2" instance=ExtResource("13_dspls")]
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer5/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "g ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha1" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer5/HBoxContainer" instance=ExtResource("14_oe417")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer5"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer5/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "h ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha2" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer5/HBoxContainer2" instance=ExtResource("15_s8ttc")]
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer6/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "i ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha2" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer6/HBoxContainer" instance=ExtResource("16_xnanu")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer6"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer6/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "j ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha1" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer6/HBoxContainer2" instance=ExtResource("17_v2bwu")]
+layout_mode = 2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer7/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "k ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha1" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer7/HBoxContainer" instance=ExtResource("18_ugh7p")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer7"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer7/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "l ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha1" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer7/HBoxContainer2" instance=ExtResource("19_q5xk0")]
+layout_mode = 2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer8/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "m ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha2" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer8/HBoxContainer" instance=ExtResource("20_qvuoc")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer8"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer8/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "n ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha1" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer8/HBoxContainer2" instance=ExtResource("21_jje3q")]
+layout_mode = 2
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer9/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "o ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha1" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer9/HBoxContainer" instance=ExtResource("22_gr5og")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer9"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+
+[node name="letra" type="Label" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer9/HBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "u ="
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlfabetoHihiha1" parent="CADERNO/Dicionario/VBoxContainer/HBoxContainer9/HBoxContainer2" instance=ExtResource("23_f41ai")]
+layout_mode = 2
+
+[node name="LetrasContainer" type="VBoxContainer" parent="CADERNO"]
+offset_left = 782.0
+offset_top = 761.0
+offset_right = 1619.0
+offset_bottom = 1761.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CADERNO/LetrasContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+script = ExtResource("2_w0c6l")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CADERNO/LetrasContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+script = ExtResource("2_w0c6l")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CADERNO/LetrasContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+script = ExtResource("2_w0c6l")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CADERNO/LetrasContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+script = ExtResource("2_w0c6l")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="CADERNO/LetrasContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+script = ExtResource("2_w0c6l")
+
+[node name="nomes_creditos" type="ColorRect" parent="CADERNO"]
+offset_left = 1028.0
+offset_top = 646.0
+offset_right = 1782.0
+offset_bottom = 1646.0
+color = Color(1, 1, 1, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CADERNO/nomes_creditos"]
+layout_mode = 0
+offset_left = -222.0
+offset_top = -67.0
+offset_right = 582.0
+offset_bottom = 980.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CADERNO/nomes_creditos/HBoxContainer"]
+custom_minimum_size = Vector2(400, 1000)
+layout_mode = 2
+
+[node name="nome" type="Label" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "Camilly"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="nome2" type="Label" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "Ariane"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="nome3" type="Label" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "Isabela"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator3" type="VSeparator" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="nome4" type="Label" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "Camila"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator4" type="VSeparator" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="nome5" type="Label" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "Nicole"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator5" type="VSeparator" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="nome6" type="Label" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "Isabela 
+santos 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator6" type="VSeparator" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CADERNO/nomes_creditos/HBoxContainer"]
+custom_minimum_size = Vector2(400, 1000)
+layout_mode = 2
+
+[node name="nome" type="Label" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "Athos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="nome2" type="Label" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "Aster"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="nome3" type="Label" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "Brenda"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator3" type="VSeparator" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="nome4" type="Label" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "Joao 
+Vitor
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator4" type="VSeparator" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="nome5" type="Label" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "Gabi"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator5" type="VSeparator" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="nome7" type="Label" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "Silvya"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator7" type="VSeparator" parent="CADERNO/nomes_creditos/HBoxContainer/VBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="devs" type="ColorRect" parent="CADERNO/nomes_creditos"]
+layout_mode = 0
+offset_left = -971.0
+offset_top = -184.0
+offset_right = -509.0
+offset_bottom = 441.0
+color = Color(1, 1, 1, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CADERNO/nomes_creditos/devs"]
+layout_mode = 2
+offset_right = 319.0
+offset_bottom = 416.0
+
+[node name="nome" type="Label" parent="CADERNO/nomes_creditos/devs/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "Devs:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="CADERNO/nomes_creditos/devs/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="nome2" type="Label" parent="CADERNO/nomes_creditos/devs/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "JS_Mol"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="CADERNO/nomes_creditos/devs/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="nome3" type="Label" parent="CADERNO/nomes_creditos/devs/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "NUBI"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator3" type="VSeparator" parent="CADERNO/nomes_creditos/devs/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="nome4" type="Label" parent="CADERNO/nomes_creditos/devs/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hsp6w")
+theme_override_font_sizes/font_size = 100
+text = "Leaffn"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 943.0
+offset_top = -387.0
+offset_right = 983.0
+offset_bottom = -347.0
+
+[node name="Pontos2" type="Label" parent="Control"]
+clip_contents = true
+layout_mode = 0
+offset_left = 909.0
+offset_top = 628.0
+offset_right = 1679.0
+offset_bottom = 795.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pontos" type="Label" parent="Control"]
+clip_contents = true
+layout_mode = 0
+offset_left = 647.0
+offset_top = 636.0
+offset_right = 1417.0
+offset_bottom = 803.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_qkmn6")
+theme_override_font_sizes/font_size = 100
+text = "PONTOS:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="CADERNO" method="_folha_animation_finished"]
+[connection signal="current_animation_changed" from="AnimationPlayer" to="CADERNO" method="_on_animation_player_current_animation_changed"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="released" from="TouchScreenButton" to="." method="_on_touch_screen_button_released"]
+[connection signal="timeout" from="timer_label/Timer" to="." method="_on_timer_timeout"]

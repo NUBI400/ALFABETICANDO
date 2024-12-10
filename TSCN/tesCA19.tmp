@@ -1,0 +1,209 @@
+[gd_scene load_steps=6 format=3 uid="uid://csm0yv65r5ryx"]
+
+[ext_resource type="Script" path="res://SCR/caderno.gd" id="1_8d2b1"]
+[ext_resource type="Texture2D" uid="uid://cqxrqcefwchgk" path="res://ASSETS/Livro.png" id="2_jxj0p"]
+[ext_resource type="Script" path="res://SCR/letras_container.gd" id="2_w0c6l"]
+[ext_resource type="Texture2D" uid="uid://c7te1pq6aryvr" path="res://ASSETS/angulo-da-seta-para-cima.png" id="2_wr1x4"]
+[ext_resource type="PackedScene" uid="uid://cdl5exccvhnat" path="res://TSCN/letra.tscn" id="3_2rwfy"]
+
+[node name="TESTE" type="Node2D"]
+
+[node name="CADERNO" type="Node2D" parent="."]
+script = ExtResource("1_8d2b1")
+
+[node name="TextureRect" type="TextureRect" parent="CADERNO"]
+custom_minimum_size = Vector2(1280, 720)
+offset_right = 1280.0
+offset_bottom = 720.0
+size_flags_horizontal = 4
+texture = ExtResource("2_jxj0p")
+expand_mode = 1
+
+[node name="silaba" type="Label" parent="CADERNO"]
+clip_contents = true
+custom_minimum_size = Vector2(800, 200)
+offset_left = 266.0
+offset_top = -41.0
+offset_right = 1066.0
+offset_bottom = 159.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "aaaa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PALAVRA" type="Label" parent="CADERNO"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+offset_left = -6.0
+offset_top = -89.0
+offset_right = 391.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "aaaaaaaaaaa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dicionario" type="ColorRect" parent="CADERNO"]
+offset_left = 949.0
+offset_top = -1.0
+offset_right = 1607.0
+offset_bottom = 1435.0
+scale = Vector2(0.5, 0.5)
+color = Color(0, 0, 0, 0.576471)
+
+[node name="Dicionario" type="RichTextLabel" parent="CADERNO/Dicionario"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 40.0
+offset_right = 682.0
+offset_bottom = 1448.0
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "a  =  [color=red]*[/color]
+b  =  [color=red]#[/color]
+c  =  [color=red]@[/color]
+d  =  [color=red]&[/color]
+e  =  [color=red]%[/color]
+f  =  [color=red]^[/color]
+
+g  =  [color=red]+[/color]
+h  =  [color=red]=[/color]
+i  =  [color=red]-[/color]
+j  =  [color=red]/[/color]
+k  =  [color=red]<[/color]
+l  =  [color=red]>[/color]"
+
+[node name="Dicionario2" type="RichTextLabel" parent="CADERNO/Dicionario"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_left = 234.0
+offset_top = 40.0
+offset_right = 890.0
+offset_bottom = 1448.0
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "m  =  [color=red]?[/color]
+n  =  [color=red][[/color]
+o  =  [color=red]][/color]
+p  =  [color=red]{[/color]
+q  =  [color=red]}[/color]
+r  =  [color=red]|[/color]
+
+s  =  [color=red]:[/color]
+t  =  [color=red];[/color]
+u  =  [color=red],[/color]
+v  =  [color=red].[/color]
+x  =  [color=red]([/color]
+y  =  [color=red])[/color]"
+
+[node name="Dicionario3" type="RichTextLabel" parent="CADERNO/Dicionario"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_left = 460.0
+offset_top = 40.0
+offset_right = 1116.0
+offset_bottom = 1448.0
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "z  =  [color=red]![/color]
+á  =  [color=red]¡[/color]
+é  =  [color=red]€[/color]
+í  =  [color=red]™[/color]
+ó  =  [color=red]£[/color]
+ú  =  [color=red]¢[/color]
+
+â  =  [color=red]∞[/color]
+ê  =  [color=red]§[/color]
+ô  =  [color=red]¶[/color]"
+
+[node name="Angulo-da-seta-para-cima2" type="Sprite2D" parent="CADERNO/Dicionario"]
+visible = false
+position = Vector2(637, 33)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_wr1x4")
+
+[node name="LetrasContainer" type="VBoxContainer" parent="CADERNO"]
+offset_left = 413.0
+offset_top = 125.0
+offset_right = 913.0
+offset_bottom = 718.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CADERNO/LetrasContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+script = ExtResource("2_w0c6l")
+
+[node name="LETRA" parent="CADERNO/LetrasContainer/HBoxContainer" instance=ExtResource("3_2rwfy")]
+layout_mode = 2
+letra = "dd"
+
+[node name="LETRA2" parent="CADERNO/LetrasContainer/HBoxContainer" instance=ExtResource("3_2rwfy")]
+layout_mode = 2
+letra = "hh"
+
+[node name="LETRA3" parent="CADERNO/LetrasContainer/HBoxContainer" instance=ExtResource("3_2rwfy")]
+layout_mode = 2
+letra = "gg"
+
+[node name="LETRA4" parent="CADERNO/LetrasContainer/HBoxContainer" instance=ExtResource("3_2rwfy")]
+layout_mode = 2
+letra = "dd"
+
+[node name="LETRA5" parent="CADERNO/LetrasContainer/HBoxContainer" instance=ExtResource("3_2rwfy")]
+layout_mode = 2
+letra = "hh"
+
+[node name="LETRA6" parent="CADERNO/LetrasContainer/HBoxContainer" instance=ExtResource("3_2rwfy")]
+layout_mode = 2
+letra = "gg"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CADERNO/LetrasContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+script = ExtResource("2_w0c6l")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CADERNO/LetrasContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+script = ExtResource("2_w0c6l")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CADERNO/LetrasContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+script = ExtResource("2_w0c6l")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CADERNO/LetrasContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+script = ExtResource("2_w0c6l")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="CADERNO/LetrasContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+script = ExtResource("2_w0c6l")
+
+[connection signal="letra_selecionada" from="CADERNO/LetrasContainer/HBoxContainer/LETRA" to="CADERNO" method="_on_letra_selecionada"]
+[connection signal="letra_selecionada" from="CADERNO/LetrasContainer/HBoxContainer/LETRA2" to="CADERNO" method="_on_letra_selecionada"]
+[connection signal="letra_selecionada" from="CADERNO/LetrasContainer/HBoxContainer/LETRA3" to="CADERNO" method="_on_letra_selecionada"]
+[connection signal="letra_selecionada" from="CADERNO/LetrasContainer/HBoxContainer/LETRA4" to="CADERNO" method="_on_letra_selecionada"]
+[connection signal="letra_selecionada" from="CADERNO/LetrasContainer/HBoxContainer/LETRA5" to="CADERNO" method="_on_letra_selecionada"]
+[connection signal="letra_selecionada" from="CADERNO/LetrasContainer/HBoxContainer/LETRA6" to="CADERNO" method="_on_letra_selecionada"]
